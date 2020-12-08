@@ -25,3 +25,6 @@ Etkileşimli [``asenkron``](https://docs.python.org/3/library/asyncio.html)
 ## İletişim
 
 Sorularınız ve daha fazlası için [buradan](https://t.me/By_Azade) bana ulaşabilirsiniz.
+
+## [Telegram Kanallarımız & Gruplarımız](https://t.me/KanalLinkleri/)
+
