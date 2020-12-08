@@ -2,17 +2,17 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 # (c) Muhammed Furkan http://t.me/B_Azade
-import asyncio
+
+
+import json
 import logging
 import os
-import time
 
 import requests
-import telethon
 import wget
-from telethon import TelegramClient, errors, events, utils
+from KekikSpatula import BimAktuel
+from telethon import TelegramClient, events
 from telethon.sync import TelegramClient
-from telethon.tl import functions, types
 from telethon.tl.custom import Button
 
 from config import Config
@@ -25,41 +25,27 @@ bot = TelegramClient('bimbot', Config.APP_ID, Config.APP_HASH).start(
     bot_token=Config.BOT_TOKEN)
 
 
-def bim(num):
-    kelime = "https://kolektifapi.herokuapp.com/bim"
-    headers = {"USER-AGENT": "UniBorg"}
-    session = requests.Session()
-    adapter = requests.adapters.HTTPAdapter(
-        pool_connections=100,
-        pool_maxsize=100
-    )
-    session.mount('http://', adapter)
-    resp = session.get(kelime, headers=headers).json()
-    tarih = resp['veri']['tarih']
-    urunler = resp['veri']['urunler']
+def bim_parse(num):
+    bim = BimAktuel()
+    veri = bim.gorsel()
+    resp = json.loads(veri)
+    tarih = resp['tarih']
+    urunler = resp['veri']
     if num == "1":
-        urun_1 = urunler[0]
         return _extracted_from_bim_15(urunler, 0, tarih)
     elif num == "2":
-        urun_2 = urunler[1]
         return _extracted_from_bim_15(urunler, 1, tarih)
     elif num == "3":
-        urun_3 = urunler[2]
         return _extracted_from_bim_15(urunler, 2, tarih)
     elif num == "4":
-        urun_4 = urunler[3]
         return _extracted_from_bim_15(urunler, 3, tarih)
     elif num == "5":
-        urun_5 = urunler[4]
         return _extracted_from_bim_15(urunler, 4, tarih)
     elif num == "6":
-        urun_6 = urunler[5]
         return _extracted_from_bim_15(urunler, 5, tarih)
     elif num == "7":
-        urun_7 = urunler[6]
         return _extracted_from_bim_15(urunler, 6, tarih)
     elif num == "8":
-        urun_8 = urunler[7]
         return _extracted_from_bim_15(urunler, 7, tarih)
 
 
@@ -107,7 +93,7 @@ async def start(event):
 async def callback(event):
     if event.data.decode("utf-8") == "1":
         await event.answer('Güncelleniyor, çok uzun sürmez :)', alert=True)
-        sonuc = bim(event.data.decode("utf-8"))
+        sonuc = bim_parse(event.data.decode("utf-8"))
         sonuc_baslik = sonuc[0]
         sonuc_fiyat = sonuc[1]
         sonuc_img = sonuc[2]
@@ -123,7 +109,7 @@ async def callback(event):
 
     if event.data.decode("utf-8") == "2":
         await event.answer('Güncelleniyor, çok uzun sürmez :)', alert=True)
-        sonuc = bim(event.data.decode("utf-8"))
+        sonuc = bim_parse(event.data.decode("utf-8"))
         sonuc_baslik = sonuc[0]
         sonuc_fiyat = sonuc[1]
         sonuc_img = sonuc[2]
@@ -140,7 +126,7 @@ async def callback(event):
 
     if event.data.decode("utf-8") == "3":
         await event.answer('Güncelleniyor, çok uzun sürmez :)', alert=True)
-        sonuc = bim(event.data.decode("utf-8"))
+        sonuc = bim_parse(event.data.decode("utf-8"))
         sonuc_baslik = sonuc[0]
         sonuc_fiyat = sonuc[1]
         sonuc_img = sonuc[2]
@@ -157,7 +143,7 @@ async def callback(event):
 
     if event.data.decode("utf-8") == "4":
         await event.answer('Güncelleniyor, çok uzun sürmez :)', alert=True)
-        sonuc = bim(event.data.decode("utf-8"))
+        sonuc = bim_parse(event.data.decode("utf-8"))
         sonuc_baslik = sonuc[0]
         sonuc_fiyat = sonuc[1]
         sonuc_img = sonuc[2]
@@ -174,7 +160,7 @@ async def callback(event):
 
     if event.data.decode("utf-8") == "5":
         await event.answer('Güncelleniyor, çok uzun sürmez :)', alert=True)
-        sonuc = bim(event.data.decode("utf-8"))
+        sonuc = bim_parse(event.data.decode("utf-8"))
         sonuc_baslik = sonuc[0]
         sonuc_fiyat = sonuc[1]
         sonuc_img = sonuc[2]
@@ -191,7 +177,7 @@ async def callback(event):
 
     if event.data.decode("utf-8") == "6":
         await event.answer('Güncelleniyor, çok uzun sürmez :)', alert=True)
-        sonuc = bim(event.data.decode("utf-8"))
+        sonuc = bim_parse(event.data.decode("utf-8"))
         sonuc_baslik = sonuc[0]
         sonuc_fiyat = sonuc[1]
         sonuc_img = sonuc[2]
@@ -208,7 +194,7 @@ async def callback(event):
 
     if event.data.decode("utf-8") == "7":
         await event.answer('Güncelleniyor, çok uzun sürmez :)', alert=True)
-        sonuc = bim(event.data.decode("utf-8"))
+        sonuc = bim_parse(event.data.decode("utf-8"))
         sonuc_baslik = sonuc[0]
         sonuc_fiyat = sonuc[1]
         sonuc_img = sonuc[2]
@@ -225,7 +211,7 @@ async def callback(event):
 
     if event.data.decode("utf-8") == "8":
         await event.answer('Güncelleniyor, çok uzun sürmez :)', alert=True)
-        sonuc = bim(event.data.decode("utf-8"))
+        sonuc = bim_parse(event.data.decode("utf-8"))
         sonuc_baslik = sonuc[0]
         sonuc_fiyat = sonuc[1]
         sonuc_img = sonuc[2]
