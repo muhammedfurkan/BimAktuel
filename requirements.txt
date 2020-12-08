@@ -1,0 +1,6 @@
+https://github.com/LonamiWebs/Telethon/archive/master.zip
+requests
+TgCrypto
+wget
+
+

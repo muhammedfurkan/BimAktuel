@@ -1,0 +1,45 @@
+{
+    "name": "Telegram Bim Aktuel Bot",
+    "description": "Telegram Bim Aktuel Bot by @KanalLinkleri !",
+    "logo": "https://telegra.ph/file/cccf49419b0b016bce6a8.jpg",
+    "keywords": [
+        "telegram",
+        "bot",
+        "telethon",
+        "bim",
+        "sosyal"
+    ],
+    "repository": "https://gitlab.com/muhammedfurkan/BimAktuel",
+    "website": "https://telegram.dog/KanalLinkleri",
+    "success_url": "https://telegram.dog/KanalLinkleri",
+    "env": {
+        "APP_ID": {
+            "description": "Get this value from my.telegram.org! Please do not steal",
+            "value": "",
+            "required": true
+        },
+        "APP_HASH": {
+            "description": "Get this value from my.telegram.org! Please do not steal",
+            "value": "",
+            "required": true
+        },
+        "BOT_TOKEN": {
+            "description": "Get this value from @botfather from telegram. Please do not steal",
+            "value": "",
+            "required": true
+        }
+    },
+    "addons": [
+        {
+            "plan": "heroku-postgresql",
+            "options": {
+                "version": "12"
+            }
+        }
+    ],
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        }
+    ]
+}
