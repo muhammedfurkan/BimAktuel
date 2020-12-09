@@ -211,7 +211,7 @@ async def callback(event):
 
     if event.data.decode("utf-8") == "8":
         await event.answer('Güncelleniyor, çok uzun sürmez :)', alert=True)
-        sonuc = bim_parse(e"8")
+        sonuc = bim_parse("8")
         sonuc_baslik = sonuc[0]
         sonuc_fiyat = sonuc[1]
         sonuc_img = sonuc[2]
