@@ -93,7 +93,7 @@ async def start(event):
 async def callback(event):
     if event.data.decode("utf-8") == "1":
         await event.answer('Güncelleniyor, çok uzun sürmez :)', alert=True)
-        sonuc = bim_parse(event.data.decode("utf-8"))
+        sonuc = bim_parse("1")
         sonuc_baslik = sonuc[0]
         sonuc_fiyat = sonuc[1]
         sonuc_img = sonuc[2]
@@ -109,7 +109,7 @@ async def callback(event):
 
     if event.data.decode("utf-8") == "2":
         await event.answer('Güncelleniyor, çok uzun sürmez :)', alert=True)
-        sonuc = bim_parse(event.data.decode("utf-8"))
+        sonuc = bim_parse("2")
         sonuc_baslik = sonuc[0]
         sonuc_fiyat = sonuc[1]
         sonuc_img = sonuc[2]
@@ -126,7 +126,7 @@ async def callback(event):
 
     if event.data.decode("utf-8") == "3":
         await event.answer('Güncelleniyor, çok uzun sürmez :)', alert=True)
-        sonuc = bim_parse(event.data.decode("utf-8"))
+        sonuc = bim_parse("3")
         sonuc_baslik = sonuc[0]
         sonuc_fiyat = sonuc[1]
         sonuc_img = sonuc[2]
@@ -143,7 +143,7 @@ async def callback(event):
 
     if event.data.decode("utf-8") == "4":
         await event.answer('Güncelleniyor, çok uzun sürmez :)', alert=True)
-        sonuc = bim_parse(event.data.decode("utf-8"))
+        sonuc = bim_parse("4")
         sonuc_baslik = sonuc[0]
         sonuc_fiyat = sonuc[1]
         sonuc_img = sonuc[2]
@@ -160,7 +160,7 @@ async def callback(event):
 
     if event.data.decode("utf-8") == "5":
         await event.answer('Güncelleniyor, çok uzun sürmez :)', alert=True)
-        sonuc = bim_parse(event.data.decode("utf-8"))
+        sonuc = bim_parse("5")
         sonuc_baslik = sonuc[0]
         sonuc_fiyat = sonuc[1]
         sonuc_img = sonuc[2]
@@ -177,7 +177,7 @@ async def callback(event):
 
     if event.data.decode("utf-8") == "6":
         await event.answer('Güncelleniyor, çok uzun sürmez :)', alert=True)
-        sonuc = bim_parse(event.data.decode("utf-8"))
+        sonuc = bim_parse("6")
         sonuc_baslik = sonuc[0]
         sonuc_fiyat = sonuc[1]
         sonuc_img = sonuc[2]
@@ -194,7 +194,7 @@ async def callback(event):
 
     if event.data.decode("utf-8") == "7":
         await event.answer('Güncelleniyor, çok uzun sürmez :)', alert=True)
-        sonuc = bim_parse(event.data.decode("utf-8"))
+        sonuc = bim_parse("7")
         sonuc_baslik = sonuc[0]
         sonuc_fiyat = sonuc[1]
         sonuc_img = sonuc[2]
@@ -211,7 +211,7 @@ async def callback(event):
 
     if event.data.decode("utf-8") == "8":
         await event.answer('Güncelleniyor, çok uzun sürmez :)', alert=True)
-        sonuc = bim_parse(event.data.decode("utf-8"))
+        sonuc = bim_parse(e"8")
         sonuc_baslik = sonuc[0]
         sonuc_fiyat = sonuc[1]
         sonuc_img = sonuc[2]
