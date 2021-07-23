@@ -60,4 +60,4 @@ WORKDIR /root/bim/
 RUN pip3 install --no-cache-dir -r /root/bim/requirements.txt
 
 # specifies what command to run within the container.
-CMD qovery run
+CMD ["qovery", "run"]
